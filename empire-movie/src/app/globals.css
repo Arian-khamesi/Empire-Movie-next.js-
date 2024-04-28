@@ -33,3 +33,10 @@ input,
 textarea {
   font-family: inherit;
 }
+
+:root {
+  --primary-color: rgb(254,208,133);
+  --white-color: #fff;
+  --dark-color: #111111b6;
+  --camel-color: rgb(192,116,69);
+}
