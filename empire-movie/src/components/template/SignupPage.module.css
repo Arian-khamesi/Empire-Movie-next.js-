@@ -1,0 +1,98 @@
+.register_container{
+    width: 100%;
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background-image: url("../../../public/image/empire3.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    height: inherit;
+    position: absolute;
+    height: 721px;
+    top: 80px;
+}
+
+.gray_register{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(19, 19, 19, 0.664);
+}
+.register_form{
+    width: 40%;
+    /* height: 400px; */
+    background-color: rgba(0, 0, 0, 0.692);
+    margin-top: 100px;
+    z-index: 99999;
+    box-shadow: 1px 1px 15px  4px rgba(0, 0, 0, 0.61);
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.form_label{
+    color: var(--primary-color);
+    font-size: 38px;
+}
+
+.signin_form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 260px;
+}
+.register_input{
+    width: 60%;
+    height: 30px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 15px;
+    padding: 0px 10px;
+    color: black;
+}
+
+.register_user{
+    width: 30%;
+    background-color:rgba(254, 208, 133, 0.514);
+    color: black;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.success_sub:hover{
+    background-color:var(--primary-color);
+    color: black;
+}
+.error_sub:hover{
+    color: black;
+}
+.success{
+    border: 2px solid transparent;
+}
+.error{
+    border: 2px solid red;
+}
+
+.success_sub{
+    cursor: pointer !important;
+}
+.error_sub{
+    cursor: not-allowed !important;
+}
+.top_footer{
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(360deg, black, transparent) !important;
+    z-index: 999;
+}
