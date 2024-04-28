@@ -7,7 +7,7 @@ function Header() {
     <div className={styles.container_img}>
     <Topbar gradiant={true}/>
     <div className={styles.full}></div>
-    <Landing/>
+    {/* <Landing/> */}
     </div>
   )
 }
