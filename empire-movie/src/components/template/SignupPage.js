@@ -9,11 +9,12 @@ import Topbar from "../module/Topbar"
 import { toast } from 'react-toastify';
 import Toast from "../module/Toast"
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from "../module/Loader"
 
 function SignupPage() {
 
     const [userAge, setUserAge] = useState(8)
-    
+    const [loadeing, setLoading] = useState(false)
 
 
     const [formState, onInputHandler] = useForm({
@@ -68,6 +69,8 @@ function SignupPage() {
         }
         console.log(newUser);
 
+        setLoading(true)
+
         const res = await fetch("/api/auth/signup", {
             method: "POST",
             body: JSON.stringify(newUser),
@@ -76,13 +79,34 @@ function SignupPage() {
 
 
         const data = await res.json()
+        setLoading(false)
+        console.log(res);
 
-        if (res.status === 201) {
-            // router.push("/signin");
-            console.log("succsses");
+        if (data.status === 201) {
+            toast.success(data.message, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                // transition: Bounce,
+            });
+            router.push("/signin");
         } else {
-            // toast.error(data.error);
-            console.log(data.error);
+            toast.error('The password and its repetition are not the same', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                // transition: Bounce,
+            });
         }
 
     }
@@ -91,62 +115,63 @@ function SignupPage() {
 
 
 
-return (
-    <div className={styles.register_container}>
-        <div className={styles.gray_register}></div>
-        {/* <Topbar gradiant={true} /> */}
-        <Toast />
-        <div className={styles.register_form}>
-            <label htmlFor="signIn" className={styles.form_label}>Sign In</label>
-            <form action="signIn" className={styles.signin_form}>
-                <Input className={styles.register_input} type="text" placeholder='Full Name' id="fullname"
-                    validations={[
-                        requiredValidator(),
-                        minValidator(6),
-                        maxValidator(20),
-                        // emailValidator()
-                    ]}
-                    onInputHandler={onInputHandler} />
-                <Input className={styles.register_input} type="text" placeholder='UserName' id="username"
-                    validations={[
-                        requiredValidator(),
-                        minValidator(5),
-                        maxValidator(20),
-                        // emailValidator()
-                    ]}
-                    onInputHandler={onInputHandler} />
-                <Input className={styles.register_input} type="text" placeholder='Email' id="email"
-                    validations={[
-                        requiredValidator(),
-                        minValidator(8),
-                        maxValidator(40),
-                        emailValidator()
-                    ]}
-                    onInputHandler={onInputHandler} />
-                <input className={styles.register_input} type="number" placeholder='Age' min={8} max={150} value={userAge} onChange={(event) => setUserAge(event.target.value)} />
-                <Input className={styles.register_input} type="password" placeholder='Password' id="password"
-                    validations={[
-                        requiredValidator(),
-                        minValidator(8),
-                        maxValidator(20),
-                        // emailValidator()
-                    ]}
-                    onInputHandler={onInputHandler} />
-                <Input className={styles.register_input} type="password" placeholder='Confirm Password' id="confirmPassword"
-                    validations={[
-                        requiredValidator(),
-                        minValidator(8),
-                        maxValidator(20),
-                        // emailValidator()
-                    ]}
-                    onInputHandler={onInputHandler} />
-                <button className={`${styles.register_user} ${formState.isInputValid ? styles.success_sub : styles.error_sub}`} onClick={registerUserHandler}>Sign Up</button>
-            </form>
+    return (
+        <div className={styles.register_container}>
+            <div className={styles.gray_register}></div>
+            {/* <Topbar gradiant={true} /> */}
+            <Toast />
+            <div className={styles.register_form}>
+                <label htmlFor="signIn" className={styles.form_label}>Sign In</label>
+                <form action="signIn" className={styles.signin_form}>
+                    <Input className={styles.register_input} type="text" placeholder='Full Name' id="fullname"
+                        validations={[
+                            requiredValidator(),
+                            minValidator(6),
+                            maxValidator(20),
+                            // emailValidator()
+                        ]}
+                        onInputHandler={onInputHandler} />
+                    <Input className={styles.register_input} type="text" placeholder='UserName' id="username"
+                        validations={[
+                            requiredValidator(),
+                            minValidator(5),
+                            maxValidator(20),
+                            // emailValidator()
+                        ]}
+                        onInputHandler={onInputHandler} />
+                    <Input className={styles.register_input} type="text" placeholder='Email' id="email"
+                        validations={[
+                            requiredValidator(),
+                            minValidator(8),
+                            maxValidator(40),
+                            emailValidator()
+                        ]}
+                        onInputHandler={onInputHandler} />
+                    <input className={styles.register_input} type="number" placeholder='Age' min={8} max={150} value={userAge} onChange={(event) => setUserAge(event.target.value)} />
+                    <Input className={styles.register_input} type="password" placeholder='Password' id="password"
+                        validations={[
+                            requiredValidator(),
+                            minValidator(8),
+                            maxValidator(20),
+                            // emailValidator()
+                        ]}
+                        onInputHandler={onInputHandler} />
+                    <Input className={styles.register_input} type="password" placeholder='Confirm Password' id="confirmPassword"
+                        validations={[
+                            requiredValidator(),
+                            minValidator(8),
+                            maxValidator(20),
+                            // emailValidator()
+                        ]}
+                        onInputHandler={onInputHandler} />
+                    {loadeing ? <Loader /> : <button className={`${styles.register_user} ${formState.isInputValid ? styles.success_sub : styles.error_sub}`} onClick={registerUserHandler}>Sign Up</button>}
+
+                </form>
+            </div>
+            <div className={styles.top_footer}></div>
+            {/* <Footer /> */}
         </div>
-        <div className={styles.top_footer}></div>
-        {/* <Footer /> */}
-    </div>
-)
+    )
 }
 
 export default SignupPage

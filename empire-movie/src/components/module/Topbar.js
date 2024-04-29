@@ -21,7 +21,7 @@ function Topbar({ gradiant }) {
           <div className={styles.topbar_btns}>
 
             <>
-              <Link href={"/login"} className={styles.topbar_button}>Sign In</Link>
+              <Link href={"/signin"} className={styles.topbar_button}>Sign In</Link>
               <Link href={"/signup"} className={styles.topbar_button}>Sign Up</Link>
             </>
 
