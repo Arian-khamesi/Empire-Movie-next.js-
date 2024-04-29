@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/layout/Layout";
 import { bebas } from "@/utils/fonts";
+import NextAuthProvider from "@/providers/NextAuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={bebas.className}>
-        <Layout>
-        {children}
-        </Layout>
+        <NextAuthProvider>
+          <Layout>
+            {children}
+          </Layout>
+        </NextAuthProvider>
       </body>
     </html>
   );
