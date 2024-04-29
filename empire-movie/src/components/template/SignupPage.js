@@ -70,7 +70,7 @@ function SignupPage() {
                     <Input className={styles.register_input} type="text" placeholder='Full Name' id="fullname"
                         validations={[
                             requiredValidator(),
-                            minValidator(8),
+                            minValidator(6),
                             maxValidator(20),
                             // emailValidator()
                         ]}
