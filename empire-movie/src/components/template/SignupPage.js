@@ -6,6 +6,9 @@ import Input from "../module/Input"
 import { emailValidator, maxValidator, minValidator, requiredValidator } from "@/app/Validation/rules"
 import { useState } from "react"
 import Topbar from "../module/Topbar"
+import { toast } from 'react-toastify';
+import Toast from "../module/Toast"
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignupPage() {
 
@@ -39,7 +42,20 @@ function SignupPage() {
 
     const registerUserHandler = () => {
         event.preventDefault()
-        console.log('user register');
+        console.log('user register', formState);
+        if (formState.inputs.password !== formState.inputs.confirmPassword) {
+            toast.error('The password and its repetition are not the same', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                // transition: Bounce,
+            });
+        }
     }
 
 
@@ -47,6 +63,7 @@ function SignupPage() {
         <div className={styles.register_container}>
             <div className={styles.gray_register}></div>
             {/* <Topbar gradiant={true} /> */}
+            <Toast/>
             <div className={styles.register_form}>
                 <label htmlFor="signIn" className={styles.form_label}>Sign In</label>
                 <form action="signIn" className={styles.signin_form}>
@@ -61,7 +78,7 @@ function SignupPage() {
                     <Input className={styles.register_input} type="text" placeholder='UserName' id="username"
                         validations={[
                             requiredValidator(),
-                            minValidator(8),
+                            minValidator(5),
                             maxValidator(20),
                             // emailValidator()
                         ]}
