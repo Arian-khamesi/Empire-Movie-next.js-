@@ -15,22 +15,22 @@ export const authOptions = {
                 try {
                     await connectDB()
                 } catch (error) {
-                    throw new Error("مشکلی در سرور پیش آمده")
+                    throw new Error("There is a problem with the server")
                 }
 
                 if (!email || !password) {
-                    throw new Error("لطفا اطلاعات صحیح و معتبر وارد کنید")
+                    throw new Error("Please enter correct and valid information")
                 }
 
                 const user = await User.findOne({ email })
 
                 if (!user)
-                    throw new Error("لطفا ابتدا حساب کاربری ایجاد کنید")
+                    throw new Error("Please create an account first")
 
                 const isValid = await verifyPassword(password, user.password)
 
                 if (!isValid)
-                    throw new Error("ایمیل یا رمز عبور اشتباه است")
+                    throw new Error("Email or password is incorrect")
 
                 return { email }
             }
