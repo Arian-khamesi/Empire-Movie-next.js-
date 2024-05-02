@@ -1,0 +1,44 @@
+/* Start Courses Pagination Styles */
+
+.courses_pagination {
+    margin: 5rem ;
+}
+
+.courses__pagination_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.courses__pagination_link {
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: black;
+    margin: 0 0.5rem;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    color: var(--primary-color);
+    list-style: none;
+}
+
+.courses__pagination_item {
+    list-style: none;
+}
+
+.courses__pagination_link:hover {
+    background-color: rgba(230, 181, 90, 0.137);
+    color: var(--primary-color);
+}
+
+.courses__pagination_link__active {
+    color: black;
+    background-color: var(--primary-color);
+}
+
+/* Finish Courses Pagination Styles */
