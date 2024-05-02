@@ -1,0 +1,52 @@
+.user_panel_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background-image: url("./../../../public/images/empire3.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    height: 721px;
+    position: absolute;
+    top: 80px;
+    padding-bottom: 70px;
+}
+
+.gray_userpanel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(19, 19, 19, 0.664);
+    z-index: 99;
+}
+
+/*///////////////////////////////////////////////////////*/
+
+.space {
+    width: 100%;
+    height: 300px;
+    z-index: 999999;
+}
+
+.grad2 {
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(180deg, black, transparent) !important;
+}
+
+.grad1 {
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(180deg, transparent, black) !important;
+}
+
+/*///////////////////////////////////////////////////////////////////*/
+.slider_form_vert {
+    z-index: 99999;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.452);
+    padding: 20px;
+    border-radius: 15px;
+}
