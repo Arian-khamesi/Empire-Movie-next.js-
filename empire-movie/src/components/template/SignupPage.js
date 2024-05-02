@@ -10,11 +10,13 @@ import { toast } from 'react-toastify';
 import Toast from "../module/Toast"
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "../module/Loader"
+import { useRouter } from "next/navigation"
 
 function SignupPage() {
 
     const [userAge, setUserAge] = useState(8)
     const [loadeing, setLoading] = useState(false)
+    const router=useRouter()
 
 
     const [formState, onInputHandler] = useForm({
@@ -82,7 +84,7 @@ function SignupPage() {
         setLoading(false)
         console.log(res);
 
-        if (data.status === 201) {
+        if (res.status === 201) {
             toast.success(data.message, {
                 position: "top-center",
                 autoClose: 5000,
@@ -96,7 +98,7 @@ function SignupPage() {
             });
             router.push("/signin");
         } else {
-            toast.error('The password and its repetition are not the same', {
+            toast.error(data.error, {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -164,7 +166,9 @@ function SignupPage() {
                             // emailValidator()
                         ]}
                         onInputHandler={onInputHandler} />
+                    <div className={styles.loader}>
                     {loadeing ? <Loader /> : <button className={`${styles.register_user} ${formState.isInputValid ? styles.success_sub : styles.error_sub}`} onClick={registerUserHandler}>Sign Up</button>}
+                    </div>
 
                 </form>
             </div>

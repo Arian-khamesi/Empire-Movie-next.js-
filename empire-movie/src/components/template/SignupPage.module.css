@@ -22,17 +22,17 @@
 }
 .register_form{
     width: 40%;
-    /* height: 400px; */
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.692);
     margin-top: 100px;
     z-index: 99999;
     box-shadow: 1px 1px 15px  4px rgba(0, 0, 0, 0.61);
     border: 1px solid var(--primary-color);
     border-radius: 50px;
-    padding: 30px;
+    padding: 30px 30px 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: baseline;
 }
 
@@ -47,7 +47,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 260px;
+    height: 360px;
 }
 .register_input{
     width: 60%;
@@ -57,6 +57,7 @@
     border-radius: 15px;
     padding: 0px 10px;
     color: black;
+    /* margin-bottom: 15px; */
 }
 
 .register_user{
@@ -67,6 +68,16 @@
     border-radius: 15px;
     transition: all 0.5s;
     cursor: pointer;
+    height: 25px;
+}
+
+.loader{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    max-height: 100px !important;
 }
 
 .success_sub:hover{
