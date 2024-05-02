@@ -1,0 +1,20 @@
+.play_list_input {
+    width: 90%;
+    height: 30px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 15px;
+    padding: 0px 10px;
+    color: black;
+    margin: 15px auto;
+}
+.play_list_textArea {
+    width: 90%;
+    height: 50px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 15px;
+    padding: 0px 10px;
+    color: black;
+    margin: 15px auto;
+}
