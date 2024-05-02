@@ -1,6 +1,7 @@
 .main_body_container{
     height: inherit;
     background-color: rgba(0, 0, 0, 0.96);
+    z-index: 99999999 !important;
 }
 .top_main_body{
     width: 100%;
