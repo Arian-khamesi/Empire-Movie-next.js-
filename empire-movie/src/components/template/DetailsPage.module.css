@@ -1,0 +1,84 @@
+.movie_info_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-image: url("./../../../public/images/land-of-bad.png"); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 775px;
+    position: absolute;
+    top: 20px;
+}
+.topbar_z{
+    z-index: 9999;
+}
+.gray_movie_info{
+    width: 100%;
+    height: 775px;
+    position: absolute;
+    background-color: rgba(20, 20, 20, 0.91);
+    z-index: 99;
+}
+
+.movie_info {
+    margin-bottom: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 200px 0px;
+}
+
+.movie_info_left {
+    width: 40%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie_info_right {
+    width: 50%;
+    margin-left: 10px;
+}
+.movie_information{
+    width: 40%;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.score_imdb_movie{
+    color: orange;
+    margin-left: 65px;
+}
+/* .time-movie{
+    
+} */
+.date_movie{
+margin-left: 65px;
+}
+
+.movie_info_poster {
+    max-width: 90%;
+    border-radius: 15px;
+    max-height: 400px;
+}
+
+.overview {
+    font-size: 22px;
+    color: teal;
+}
+.movie_info_desc{
+    color: var(--primary-color);
+    word-spacing: 1px;
+}
+
+.movie_info_title{
+    color: var(--primary-color);
+}
