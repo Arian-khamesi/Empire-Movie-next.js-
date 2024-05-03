@@ -8,9 +8,9 @@ import Link from "next/link"
 
 async function Topbar({ gradiant }) {
 
+
   // const { data } = useSession()
   // console.log(data);
-
   // if (data) {
   //   const user = await User.findOne({ email: data.user.email })
   // }

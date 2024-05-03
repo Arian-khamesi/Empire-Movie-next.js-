@@ -5,9 +5,10 @@ import styles from "./Pagination.module.css"
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 
-function Pagination({ item, itemCount, pathName, setShownCourses }) {
+function Pagination({ item, itemCount,setShownCourses}) {
 
-    const { page } = useParams()
+    // const { page } = useParams()
+    const [page, setPage] = useState(1)
 
     const [pageCount, setPageCount] = useState(null)
 
@@ -34,9 +35,9 @@ function Pagination({ item, itemCount, pathName, setShownCourses }) {
                 {
                     Array(pageCount).fill("paginate").map((pageNum, index) => (
                         <li className={styles.courses__pagination_item}>
-                            <Link href={`${pathName}/${index + 1}`} className={(Number(page) === index + 1) ? `${styles.courses__pagination_link} ${styles.courses__pagination_link__active}` : styles.courses__pagination_link}>
+                            <button className={(Number(page) === index + 1) ? `${styles.courses__pagination_link} ${styles.courses__pagination_link__active}` : styles.courses__pagination_link} onClick={() => setPage(index + 1)}>
                                 {index + 1}
-                            </Link>
+                            </button>
                         </li>
                     ))
                 }

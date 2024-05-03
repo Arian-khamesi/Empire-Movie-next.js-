@@ -25,6 +25,7 @@
     text-decoration: none;
     color: var(--primary-color);
     list-style: none;
+    cursor: pointer;
 }
 
 .courses__pagination_item {
