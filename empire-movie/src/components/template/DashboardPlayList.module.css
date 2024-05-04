@@ -3,7 +3,7 @@
     height: 250px;
     background-color: rgba(0, 0, 0, 0.692);
     margin-top: 50px;
-    z-index: 999;
+    z-index: 99999999;
     box-shadow: 1px 1px 15px 4px rgba(0, 0, 0, 0.61);
     border: 1px solid var(--primary-color);
     border-radius: 50px;
@@ -12,6 +12,7 @@
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+   
 }
 
 .play_list_form {
@@ -37,6 +38,7 @@
     transition: all 0.5s;
     cursor: pointer;
     height: 30px;
+    cursor: pointer;
 }
 
 .play_list_user:hover {

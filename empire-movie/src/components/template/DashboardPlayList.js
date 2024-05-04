@@ -3,6 +3,9 @@
 import { useState } from "react"
 import styles from "./DashboardPlayList.module.css"
 import TextInput from "../module/TextInput"
+import { toast } from 'react-toastify';
+import Toast from "../module/Toast"
+import 'react-toastify/dist/ReactToastify.css';
 
 function DashboardPlayList() {
 
@@ -15,8 +18,20 @@ function DashboardPlayList() {
         postre: ""
     })
 
-    const submitHandler = () => {
+    const submitHandler = (e) => {
+        e.preventDefault()
         console.log(playlistData);
+        toast.warn('Sorry, this part of the site is under development', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            // transition: Bounce,
+        });
     }
 
 
@@ -24,6 +39,7 @@ function DashboardPlayList() {
     return (
         <div className={styles.playlist}>
             <div className={styles.play_list_form_container}>
+            <Toast />
                 <form action="" className={styles.play_list_form}>
                     <TextInput
                         type={"text"}

@@ -1,16 +1,16 @@
+"use client"
 
 import { useSession } from "next-auth/react"
-// import { useSession } from "next-auth/react"
 import styles from "./Topbar.module.css"
 import Link from "next/link"
 // import User from "@/models/Users"
 
 
-async function Topbar({ gradiant }) {
+function Topbar({ gradiant }) {
 
+  const { data } = useSession()
+  console.log(data);
 
-  // const { data } = useSession()
-  // console.log(data);
   // if (data) {
   //   const user = await User.findOne({ email: data.user.email })
   // }
@@ -32,10 +32,10 @@ async function Topbar({ gradiant }) {
         <div className={styles.topbar_right}>
           <div className={styles.topbar_btns}>
 
-            <>
+            {data ? <Link href={"/dashboard"} className={styles.topbar_button}>{data.user.email}</Link> : <>
               <Link href={"/signin"} className={styles.topbar_button}>Sign In</Link>
               <Link href={"/signup"} className={styles.topbar_button}>Sign Up</Link>
-            </>
+            </>}
 
           </div>
         </div>
