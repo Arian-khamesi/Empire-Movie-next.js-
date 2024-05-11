@@ -24,3 +24,19 @@
 .footer_logo{
     margin-bottom: 0px;
 }
+
+@media(max-height:1100px) {
+    .footer{
+        margin: 10px;
+        width: 70%;
+        height: 50px;
+        background-color: transparent;
+        border: 3px solid rgba(254, 208, 133, 0.452);
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--primary-color);
+        padding: 5px 150px;
+    }
+}

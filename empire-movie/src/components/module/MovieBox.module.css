@@ -1,79 +1,162 @@
-.horiz_movie_box{
+.horiz_movie_box {
     width: 350px;
     height: 230px;
     background-color: transparent;
     border-radius: 10px;
 }
-.horiz_cover_movie_box{
+
+.horiz_cover_movie_box {
     width: 100%;
     height: 200px;
     margin-bottom: 5px;
 }
-.horiz_img_movie_box{
+
+.horiz_img_movie_box {
     width: 100%;
     height: 200px;
     border-radius: 12px;
     z-index: 900;
 }
-.horiz_movie_score{
-width: 35px;
-height: 25px;
-background-color: orange;
-position: relative;
-top: -25.5px;
-left: 314px;
-z-index: 999 !important;
-border-top-left-radius: 10px;
-border-bottom-right-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
+
+.horiz_movie_score {
+    width: 35px;
+    height: 25px;
+    background-color: orange;
+    position: relative;
+    top: -25.5px;
+    left: 314px;
+    z-index: 999 !important;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.horiz_title_movie_box{
+.horiz_title_movie_box {
     color: var(--primary-color);
     font-size: 20px;
     margin: 5px;
 }
+
 /*/////////////////////////////////////////////////*/
-.vert_movie_box{
+.vert_movie_box {
     width: 175px;
     height: 300px;
     background-color: transparent;
     border-radius: 10px;
 }
-.vert_cover_movie_box{
+
+.vert_cover_movie_box {
     width: 100%;
     height: 260px;
     margin-bottom: 5px;
 }
-.vert_img_movie_box{
+
+.vert_img_movie_box {
     width: 100%;
     height: 260px;
     border-radius: 12px;
     z-index: 900;
 }
-.vert_movie_score{
-width: 35px;
-height: 25px;
-background-color: orange;
-position: relative;
-top: -25.5px;
-left: 140px;
-z-index: 999 !important;
-border-top-left-radius: 10px;
-border-bottom-right-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
+
+.vert_movie_score {
+    width: 35px;
+    height: 25px;
+    background-color: orange;
+    position: relative;
+    top: -25.5px;
+    left: 140px;
+    z-index: 999 !important;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.vert_title_movie_box{
+.vert_title_movie_box {
     color: var(--primary-color);
     font-size: 20px;
     margin: 5px;
 }
+
 /*/////////////////////////////////////////////////*/
-.router_link{
+.router_link {
     text-decoration: none;
+}
+
+@media(max-height:1200px) {
+    .horiz_movie_box {
+        width: 250px;
+        height: 200px;
+        background-color: transparent;
+        border-radius: 10px;
+        z-index: 99;
+    }
+
+    .horiz_cover_movie_box {
+        width: 100%;
+        height: 160px;
+        margin-bottom: 5px;
+    }
+
+    .horiz_img_movie_box {
+        width: 100%;
+        height: 160px;
+        border-radius: 12px;
+        z-index: 900;
+    }
+
+    .horiz_movie_score {
+        width: 35px;
+        height: 25px;
+        background-color: orange;
+        position: relative;
+        top: -31px;
+        left: 215px;
+        z-index: 9999 !important;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media(max-height:1100px) {
+    .vert_movie_box {
+        width: 135px;
+        height: 300px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    
+    .vert_cover_movie_box {
+        width: 100%;
+        height: 220px;
+        margin-bottom: 5px;
+    }
+    
+    .vert_img_movie_box {
+        width: 100%;
+        height: 220px;
+        border-radius: 12px;
+        z-index: 900;
+    }
+    
+    .vert_movie_score {
+        width: 35px;
+        height: 25px;
+        background-color: orange;
+        position: relative;
+        top: -31px;
+        left: 100px;
+        z-index: 999 !important;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
